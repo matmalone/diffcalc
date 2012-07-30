@@ -1,4 +1,7 @@
+#!/usr/bin/php
 <?
+
+$start_column = 12;
 
 $file_a = fopen($argv[1], 'r');
 $file_b = fopen($argv[2], 'r');
@@ -17,7 +20,7 @@ for ($i=1; true; $i++)
     $max = max($len_a, $len_b);
     // echo "max = $max\n";
 
-    for ($column=30; $column < $max; $column++)
+    for ($column=$start_column; $column < $max; $column++)
     {
         if ($line_a[$column] != $line_b[$column]) echo "$i : $column : {$line_a[$column]}{$line_b[$column]}\n";
     }
